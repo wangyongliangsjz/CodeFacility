@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98C61CDE-9402-4DB5-9DB5-658EA2CCADA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeFacility</RootNamespace>
+    <AssemblyName>CodeFacility</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutocompleteMenu, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\AutocompleteMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.536.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=7.2.77.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=5.1.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.2.2937.24249, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\Code\BaseConfigure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\Code\CodeFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FindAndReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FindAndReplaceForm.designer.cs">
+      <DependentUpon>FindAndReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormCopyData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormCopyData.Designer.cs">
+      <DependentUpon>FormCopyData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormCreater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormCreater.Designer.cs">
+      <DependentUpon>FormCreater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormDataTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormDataTransfer.Designer.cs">
+      <DependentUpon>FormDataTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormDbLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormDbLink.Designer.cs">
+      <DependentUpon>FormDbLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormFieldData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormFieldData.Designer.cs">
+      <DependentUpon>FormFieldData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormFileType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormFileType.Designer.cs">
+      <DependentUpon>FormFileType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormImportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormImportData.Designer.cs">
+      <DependentUpon>FormImportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormLabel.Designer.cs">
+      <DependentUpon>FormLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormLabelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormLabelType.Designer.cs">
+      <DependentUpon>FormLabelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormMultiTableQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormMultiTableQuery.Designer.cs">
+      <DependentUpon>FormMultiTableQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormOption.Designer.cs">
+      <DependentUpon>FormOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormQueryConstrue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormQueryConstrue.Designer.cs">
+      <DependentUpon>FormQueryConstrue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormTableQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormTableQuery.Designer.cs">
+      <DependentUpon>FormTableQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormTag.Designer.cs">
+      <DependentUpon>FormTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormTagType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormTagType.Designer.cs">
+      <DependentUpon>FormTagType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormTemplet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormTemplet.Designer.cs">
+      <DependentUpon>FormTemplet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\FormTempletType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormTempletType.Designer.cs">
+      <DependentUpon>FormTempletType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\Globals.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\MainCodeMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\MainCodeMaker.designer.cs">
+      <DependentUpon>MainCodeMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\ToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\ToolForm.Designer.cs">
+      <DependentUpon>ToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\XmlFoldingStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWin.designer.cs">
+      <DependentUpon>FormWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FindAndReplaceForm.resx">
+      <DependentUpon>FindAndReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormCopyData.resx">
+      <DependentUpon>FormCopyData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormCreater.resx">
+      <DependentUpon>FormCreater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormDataTransfer.resx">
+      <DependentUpon>FormDataTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormDbLink.resx">
+      <DependentUpon>FormDbLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormFieldData.resx">
+      <DependentUpon>FormFieldData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormFileType.resx">
+      <DependentUpon>FormFileType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormImportData.resx">
+      <DependentUpon>FormImportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormLabel.resx">
+      <DependentUpon>FormLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormLabelType.resx">
+      <DependentUpon>FormLabelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormMultiTableQuery.resx">
+      <DependentUpon>FormMultiTableQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormOption.resx">
+      <DependentUpon>FormOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormQueryConstrue.resx">
+      <DependentUpon>FormQueryConstrue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormTableQuery.resx">
+      <DependentUpon>FormTableQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormTag.resx">
+      <DependentUpon>FormTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormTagType.resx">
+      <DependentUpon>FormTagType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormTemplet.resx">
+      <DependentUpon>FormTemplet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormTempletType.resx">
+      <DependentUpon>FormTempletType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\MainCodeMaker.resx">
+      <DependentUpon>MainCodeMaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\ToolForm.resx">
+      <DependentUpon>ToolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstWin.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Data\SqlLiteDb\test.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cleansys.ico" />
+    <Content Include="CodeMaker\Images\anew.jpg" />
+    <Content Include="CodeMaker\Images\code.jpg" />
+    <Content Include="CodeMaker\Images\cutLink.jpg" />
+    <Content Include="CodeMaker\Images\execut.jpg" />
+    <Content Include="CodeMaker\Images\Link.jpg" />
+    <Content Include="CodeMaker\Images\Query.jpg" />
+    <Content Include="CodeMaker\Images\save.jpg" />
+    <Content Include="CodeMaker\Images\search.jpg" />
+    <Content Include="CodeMaker\Images\stop.jpg" />
+    <Content Include="CodeMaker\Images\vote_1.gif" />
+    <Content Include="Data\CodeMaker\002005\C#后台模板.xslt" />
+    <Content Include="Data\CodeMaker\002005\C#后台模板2.xslt" />
+    <Content Include="Data\CodeMaker\002005\HTM新增添加模板_1.xslt" />
+    <Content Include="Data\CodeMaker\002005\HTM新增添加模板_2.xslt" />
+    <Content Include="Data\CodeMaker\002005\HTM新增添加模板_3.xslt" />
+    <Content Include="Data\CodeMaker\002005\HTM查询模板_2.xslt" />
+    <Content Include="Data\CodeMaker\002005\HTM查询模板_3.xslt" />
+    <Content Include="Data\CodeMaker\002005\JS模板_1.xslt" />
+    <Content Include="Data\CodeMaker\002005\JS模板_1_增删改.xslt" />
+    <Content Include="Data\CodeMaker\002005\JS模板_1_查询.xslt" />
+    <Content Include="Data\CodeMaker\002005\JS模板_1_查询2.xslt" />
+    <Content Include="Data\CodeMaker\002005\JS模板_2.xslt" />
+    <Content Include="Data\CodeMaker\002005\XSLT分页数据模板.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\实体类1.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\实体类2.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\数据访问接口.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\数据访问类%28SQL语句%29.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\数据访问类%28存储过程%29 - 副本.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\数据访问类%28存储过程%29.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\生成SQL语句.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001 - 副本\生成存储过程.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\Access数据访问类.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\Json字符串.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\实体类1.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\实体类2.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\数据访问接口.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\数据访问接口2.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\数据访问类%28SQL语句%29.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\数据访问类%28SQL语句%292.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\数据访问类%28存储过程%29 - 副本.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\数据访问类%28存储过程%29.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\生成SQL语句.xslt" />
+    <Content Include="Data\CodeMaker\Database\001001\生成存储过程.xslt" />
+    <Content Include="Data\CodeMaker\Database\001002\常用语句.txt" />
+    <Content Include="Data\CodeMaker\Database\001002\搜索数据库数据.txt" />
+    <Content Include="Data\CodeMaker\Database\001003\数据访问接口.xslt" />
+    <Content Include="Data\CodeMaker\Database\001003\数据访问类%28sql语句%29.xslt" />
+    <Content Include="Data\CodeMaker\Database\001003\数据访问类%28存储过程%29.xslt" />
+    <Content Include="Data\CodeMaker\Database\001004\实体类.xslt" />
+    <Content Include="Data\CodeMaker\Database\001004\实体类2.xslt" />
+    <Content Include="Data\CodeMaker\Database\001004\接口.xslt" />
+    <Content Include="Data\CodeMaker\Database\001004\数据访问类.xslt" />
+    <Content Include="Data\CodeMaker\Database\001004\数据访问类2.xslt" />
+    <Content Include="Data\CodeMaker\Database\001005\业务逻辑接口.xslt" />
+    <Content Include="Data\CodeMaker\Database\001005\业务逻辑类.xslt" />
+    <Content Include="Data\CodeMaker\Database\001005\字段字符串.xslt" />
+    <Content Include="Data\CodeMaker\Database\001005\实体类.xslt" />
+    <Content Include="Data\CodeMaker\Database\001005\实体类A.xslt" />
+    <Content Include="Data\CodeMaker\Database\001005\控制器.xslt" />
+    <Content Include="Data\CodeMaker\Database\001006\业务逻辑接口.xslt" />
+    <Content Include="Data\CodeMaker\Database\001006\业务逻辑类.xslt" />
+    <Content Include="Data\CodeMaker\Database\001006\业务逻辑类_1.xslt" />
+    <Content Include="Data\CodeMaker\Database\001006\控制器.xslt" />
+    <Content Include="Data\CodeMaker\Database\001007\mybatis.xslt" />
+    <Content Include="Data\CodeMaker\Remark.txt" />
+    <Content Include="Images\Ico\20110415052635999.ico" />
+    <Content Include="Images\Ico\Cleansys_exe.ico" />
+    <Content Include="Images\Ico\earth globe.ico" />
+    <Content Include="Images\Ico\Edit.ico" />
+    <Content Include="Images\Ico\Unmozify.ico" />
+    <Content Include="Images\pptx.gif" />
+    <Content Include="Lib\AutocompleteMenu.dll" />
+    <Content Include="Lib\Devart.Data.dll" />
+    <Content Include="Lib\Devart.Data.Oracle.dll" />
+    <Content Include="Lib\ICSharpCode.TextEditor.dll" />
+    <Content Include="Lib\MySql.Data.dll" />
+    <Content Include="Lib\Newtonsoft.Json.dll" />
+    <Content Include="Lib\NPOI.dll" />
+    <Content Include="Lib\Oracle.DataAccess.dll" />
+    <Content Include="Lib\SQLite.Interop.081.dll" />
+    <Content Include="Lib\SQLite.Interop.dll" />
+    <Content Include="Lib\System.Data.SQLite.DLL" />
+    <Content Include="Lib\WeifenLuo.WinFormsUI.Docking.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CodeMaker\Data\UpLoadFile\" />
+    <Folder Include="CodeMaker\Data\XmlFile\" />
+    <Folder Include="CodeMaker\Data\XsltFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccessDal\AccessDal.csproj">
+      <Project>{c2f38c41-4630-481a-a76d-da5450a91c7d}</Project>
+      <Name>AccessDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{ab299b1f-5d74-4851-b0d7-5100d6768186}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CurrencyDal\CurrencyDal.csproj">
+      <Project>{9048b75a-2575-49ab-9dbf-33d32083cc51}</Project>
+      <Name>CurrencyDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALFactory\DALFactory.csproj">
+      <Project>{5dc45ec2-dad7-4b7b-b3b5-2ffbc2090ebf}</Project>
+      <Name>DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALProfile\DALProfile.csproj">
+      <Project>{d733f20e-59be-4f04-aa21-c32728969d16}</Project>
+      <Name>DALProfile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2d18be89-d210-49eb-a9dd-2246fbb3df6d}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{4e33d6d1-f3cf-4775-97fc-9b5fb097a3ac}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

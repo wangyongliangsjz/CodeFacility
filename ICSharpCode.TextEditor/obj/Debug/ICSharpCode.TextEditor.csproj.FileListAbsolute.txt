@@ -1,0 +1,12 @@
+D:\MyProject\代码生成器New\ICSharpCode.TextEditor-master\ICSharpCode.TextEditor-master\Project\bin\ICSharpCode.TextEditor.dll
+D:\MyProject\代码生成器New\ICSharpCode.TextEditor-master\ICSharpCode.TextEditor-master\Project\bin\ICSharpCode.TextEditor.pdb
+D:\MyProject\代码生成器New\ICSharpCode.TextEditor-master\ICSharpCode.TextEditor-master\Project\obj\Debug\ICSharpCode.TextEditor.csprojAssemblyReference.cache
+D:\MyProject\代码生成器New\ICSharpCode.TextEditor-master\ICSharpCode.TextEditor-master\Project\obj\Debug\ICSharpCode.TextEditor.csproj.CoreCompileInputs.cache
+D:\MyProject\代码生成器New\ICSharpCode.TextEditor-master\ICSharpCode.TextEditor-master\Project\obj\Debug\ICSharpCode.TextEditor.dll
+D:\MyProject\代码生成器New\ICSharpCode.TextEditor-master\ICSharpCode.TextEditor-master\Project\obj\Debug\ICSharpCode.TextEditor.pdb
+D:\MyProject\代码生成器New\CodeFacility\ICSharpCode.TextEditor\bin\ICSharpCode.TextEditor.dll
+D:\MyProject\代码生成器New\CodeFacility\ICSharpCode.TextEditor\bin\ICSharpCode.TextEditor.pdb
+D:\MyProject\代码生成器New\CodeFacility\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.csprojAssemblyReference.cache
+D:\MyProject\代码生成器New\CodeFacility\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.csproj.CoreCompileInputs.cache
+D:\MyProject\代码生成器New\CodeFacility\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.dll
+D:\MyProject\代码生成器New\CodeFacility\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.pdb
