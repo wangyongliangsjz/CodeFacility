@@ -1,0 +1,112 @@
+﻿--搜索数据库数据
+--查询表
+drop table #tbname1
+create table #tbname1
+(name nvarchar(100))
+
+drop table #tbname2
+create table #tbname2
+(name nvarchar(100))
+
+declare @temptbname varchar(50)
+declare @valuetype int --1 字符类型数字类型日期类型
+declare @value nvarchar(100)
+
+declare @sql varchar(4000)
+declare @mid int,@i int
+--设置搜索变量
+set @temptbname='#tbname1'
+set @valuetype=1
+set @value='苹果'
+
+set @sql=''
+set @i=1
+drop table #table
+select ROW_NUMBER() over(order by name) id,name into #table from sysobjects where xtype='U' and name<>'dtproperties'
+order by name
+select @mid=MAX(id) from #table
+
+while (@i<=@mid)
+begin
+	set @sql=''
+	select @sql=@sql+ case when a.colorder=1 then 'insert into '+@temptbname+' select top 1 '''+d.name+''' tablename from '+d.name +' where 1=2 ' else '' end 
+	+ case when b.name='datetime' and @valuetype=3 then ' or CONVERT(varchar(30),'+a.name+',120)='''+@value+'''' when CHARINDEX('char',b.name)>0 and @valuetype=1 then ' or '+ a.name+'='''+@value+'''' when @valuetype=2 then ' or '+ a.name+'='''+@value+'''' else '' end
+	 FROM syscolumns a inner join systypes b on a.xtype=b.xusertype and b.name<>'timestamp '
+	inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties' 
+	inner join #table e on d.name=e.name and e.id=@i
+	order by d.name,a.colorder
+	exec(@sql)
+	set @i=@i+1
+end
+
+select * from #tbname1
+select * from #tbname2
+
+--查询字段
+drop table #Columns
+create table #Columns
+(TableName nvarchar(100),
+ColumnsName nvarchar(100),
+Data nvarchar(100)
+)
+
+
+declare @temptbname varchar(50)
+declare @valuetype int --1 字符类型数字类型日期类型
+declare @value nvarchar(100)
+declare @sql varchar(4000)
+declare @mid int,@i int
+--设置搜索变量
+set @valuetype=1
+set @value='苹果'
+
+set @sql=''
+set @i=1
+drop table #table
+select ROW_NUMBER() over(order by d.name,a.colorder) id,d.name TableName,a.colorder ColumnsId,a.name ColumnsName, b.name ColumnsType
+into #table 
+FROM syscolumns a inner join systypes b on a.xtype=b.xusertype and b.name<>'timestamp '
+	inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties' 
+	inner join #tbname1 e on d.name=e.name
+order by d.name,a.colorder
+select @mid=MAX(id) from #table
+
+while (@i<=@mid)
+begin
+	set @sql=''
+	select @sql='insert into #Columns select top 1 '''+TableName+''' TableName,'''+ColumnsName+''' ColumnsName,'''+@value+''' Data   from '+TableName +' where 1=2 ' 
+	+ case when ColumnsType='datetime' and @valuetype=3 then ' or CONVERT(varchar(30),'+ColumnsName+',120)='''+@value+'''' when CHARINDEX('char',ColumnsType)>0 and @valuetype=1 then ' or '+ ColumnsName+'='''+@value+'''' when @valuetype=2 then ' or '+ ColumnsName+'='''+@value+'''' else '' end
+	 FROM  #table where id=@i
+	order by id
+	exec(@sql)
+	set @i=@i+1
+end
+
+select * from #Columns
+
+--查询表行数
+drop table #tbname
+create table #tbname
+(name nvarchar(100),num int)
+
+declare @sql varchar(4000)
+declare @mid int,@i int
+
+set @sql=''
+set @i=1
+drop table #table
+select ROW_NUMBER() over(order by name) id,name into #table from sysobjects where xtype='U' and name<>'dtproperties'
+order by name
+select @mid=MAX(id) from #table
+delete #tbname
+while (@i<=@mid)
+begin
+	set @sql=''
+	select @sql=@sql+ 'insert into #tbname select '''+name+''' tbname, count(*) num from '+name
+	 FROM #table  where id=@i
+	order by name
+	exec(@sql)
+	set @i=@i+1
+end
+
+select * from #tbname order by num desc
