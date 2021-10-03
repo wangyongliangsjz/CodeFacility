@@ -69,6 +69,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lb_DbMessage = new System.Windows.Forms.Label();
             this.btn_Create = new System.Windows.Forms.Button();
+            this.cmb_LanguageType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -127,6 +130,7 @@
             // 
             // QueryToolStripTb
             // 
+            this.QueryToolStripTb.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.QueryToolStripTb.Name = "QueryToolStripTb";
             this.QueryToolStripTb.Size = new System.Drawing.Size(80, 34);
             // 
@@ -392,6 +396,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cmb_LanguageType);
             this.panel1.Controls.Add(this.chb_Rows);
             this.panel1.Controls.Add(this.btn_Copy);
             this.panel1.Controls.Add(this.label1);
@@ -482,6 +488,27 @@
             this.btn_Create.UseVisualStyleBackColor = true;
             this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
+            // cmb_LanguageType
+            // 
+            this.cmb_LanguageType.FormattingEnabled = true;
+            this.cmb_LanguageType.Items.AddRange(new object[] {
+            "C#",
+            "Java"});
+            this.cmb_LanguageType.Location = new System.Drawing.Point(147, 54);
+            this.cmb_LanguageType.Name = "cmb_LanguageType";
+            this.cmb_LanguageType.Size = new System.Drawing.Size(89, 20);
+            this.cmb_LanguageType.TabIndex = 25;
+            this.cmb_LanguageType.Text = "C#";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(106, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "类型";
+            // 
             // FormCreater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -495,6 +522,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -554,5 +582,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rIsIdentity;
         private System.Windows.Forms.DataGridViewTextBoxColumn rNullable;
         private System.Windows.Forms.DataGridViewTextBoxColumn rFieldType;
+        private System.Windows.Forms.ComboBox cmb_LanguageType;
+        private System.Windows.Forms.Label label4;
     }
 }

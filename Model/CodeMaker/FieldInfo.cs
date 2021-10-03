@@ -387,6 +387,7 @@ namespace Model.CodeMaker
             }
         }
 
+        private string _valuetypename;
         /// <summary>
         /// 字段对应的数据类型名称
         /// </summary>
@@ -394,45 +395,50 @@ namespace Model.CodeMaker
         {
             get
             {
-                string type = "";
-                string FullName = this.ValueType.FullName.Replace("System.", "");
-                switch (FullName.ToLower())
+                if(_valuetypename==null)
                 {
-                    case "int32":
-                        type = "int";
-                        break;
-                    case "string":
-                        type = "string";
-                        break;
-                    case "boolean":
-                        type = "bool";
-                        break;
-                    case "single":
-                        type = "float";
-                        break;
-                    case "double":
-                        type = "double";
-                        break;
-                    case "datetime":
-                    case "timestamp": //mysql数据库的数据类型
-                        type = "DateTime";
-                        break;
-                    case "decimal":
-                        type = "decimal";
-                        break;
-                }
-                if (type == "")
-                {
-                    switch (FieldType.ToLower())
+                    string type = "";
+                    string FullName = this.ValueType.FullName.Replace("System.", "");
+                    switch (FullName.ToLower())
                     {
-                        case "integer":
+                        case "int32":
                             type = "int";
                             break;
+                        case "string":
+                            type = "string";
+                            break;
+                        case "boolean":
+                            type = "bool";
+                            break;
+                        case "single":
+                            type = "float";
+                            break;
+                        case "double":
+                            type = "double";
+                            break;
+                        case "datetime":
+                        case "timestamp": //mysql数据库的数据类型
+                            type = "DateTime";
+                            break;
+                        case "decimal":
+                            type = "decimal";
+                            break;
                     }
+                    if (type == "")
+                    {
+                        switch (FieldType.ToLower())
+                        {
+                            case "integer":
+                                type = "int";
+                                break;
+                        }
+                    }
+                    _valuetypename = type;
                 }
-                return type;
+                
+                return _valuetypename;
             }
-            set { }
+            set { _valuetypename = value; }
         }
 
         /// <summary>
