@@ -142,6 +142,7 @@ namespace CodeFacility.CodeMaker
             {
                 case DbDataTypeEnum.表:
                     table = info.Tables[tablename];
+                    table = GetTable(cmb_LanguageType.Text ,table);
                     break;
                 case DbDataTypeEnum.视图:
                     table = info.View[tablename];
@@ -338,6 +339,33 @@ namespace CodeFacility.CodeMaker
             }
 
             return Content;
+        }
+
+        private TableInfo GetTable(string type,TableInfo tinfo)
+        {
+            TableInfo rinfo = tinfo;
+            if (type=="C#")
+            {
+
+            }
+            else if(type=="Java")
+            {
+                var listField = rinfo.Fields.GetList();
+                for(int i=0;i< rinfo.Fields.Count;i++)
+                {
+                    var item = rinfo.Fields[i];
+                    string str = item.ValueTypeName;
+                    if (item.ValueTypeName == "string")
+                        item.ValueTypeName = "String";
+                    else if (item.ValueTypeName == "double" || item.ValueTypeName == "decimal")
+                        item.ValueTypeName = "BigDecimal";
+                    else if (item.ValueTypeName == "datetime" || item.ValueTypeName == "DateTime")
+                        item.ValueTypeName = "Date";
+                    else if (item.ValueTypeName == "int")
+                        item.ValueTypeName = "Integer";
+                }
+            }
+            return rinfo;
         }
 
         /// <summary>
