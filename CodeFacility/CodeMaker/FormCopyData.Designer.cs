@@ -49,6 +49,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_clear2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Link2 = new System.Windows.Forms.Button();
             this.tb_Password2 = new System.Windows.Forms.TextBox();
@@ -59,6 +60,7 @@
             this.tb_DataSource2 = new System.Windows.Forms.TextBox();
             this.tb_DbName2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -67,8 +69,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tv_table = new System.Windows.Forms.TreeView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_clear2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv6)).BeginInit();
             this.tabPage6.SuspendLayout();
@@ -83,6 +83,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -302,6 +303,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "目标数据库";
             // 
+            // btn_clear2
+            // 
+            this.btn_clear2.Location = new System.Drawing.Point(159, 79);
+            this.btn_clear2.Name = "btn_clear2";
+            this.btn_clear2.Size = new System.Drawing.Size(60, 23);
+            this.btn_clear2.TabIndex = 41;
+            this.btn_clear2.Text = "清  除";
+            this.btn_clear2.UseVisualStyleBackColor = true;
+            this.btn_clear2.Click += new System.EventHandler(this.btn_clear2_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -396,6 +407,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "源数据库";
             // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(280, 73);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(60, 23);
+            this.btn_clear.TabIndex = 40;
+            this.btn_clear.Text = "清  除";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.listBox1);
@@ -482,26 +503,6 @@
             this.splitContainer1.SplitterDistance = 160;
             this.splitContainer1.TabIndex = 1;
             // 
-            // btn_clear
-            // 
-            this.btn_clear.Location = new System.Drawing.Point(280, 73);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(60, 23);
-            this.btn_clear.TabIndex = 40;
-            this.btn_clear.Text = "清  除";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // btn_clear2
-            // 
-            this.btn_clear2.Location = new System.Drawing.Point(159, 79);
-            this.btn_clear2.Name = "btn_clear2";
-            this.btn_clear2.Size = new System.Drawing.Size(60, 23);
-            this.btn_clear2.TabIndex = 41;
-            this.btn_clear2.Text = "清  除";
-            this.btn_clear2.UseVisualStyleBackColor = true;
-            this.btn_clear2.Click += new System.EventHandler(this.btn_clear2_Click);
-            // 
             // FormCopyData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -510,7 +511,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormCopyData";
             this.TabText = "FormCopyDb";
-            this.Text = "FormCopyDb";
+            this.Text = "数据复制";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv6)).EndInit();
             this.tabPage6.ResumeLayout(false);
@@ -530,6 +531,7 @@
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 

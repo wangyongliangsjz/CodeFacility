@@ -171,6 +171,12 @@
     <Compile Include="CodeMaker\FormTableQuery.Designer.cs">
       <DependentUpon>FormTableQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="CodeMaker\FormTableStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMaker\FormTableStructure.Designer.cs">
+      <DependentUpon>FormTableStructure.cs</DependentUpon>
+    </Compile>
     <Compile Include="CodeMaker\FormTag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CodeMaker\FormTableQuery.resx">
       <DependentUpon>FormTableQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaker\FormTableStructure.resx">
+      <DependentUpon>FormTableStructure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CodeMaker\FormTag.resx">
       <DependentUpon>FormTag.cs</DependentUpon>

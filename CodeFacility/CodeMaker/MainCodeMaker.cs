@@ -446,14 +446,14 @@ namespace CodeFacility.CodeMaker
 
         private void CopyDataToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (FindDocument("数据库连接") == null)
+            if (FindDocument("数据复制") == null)
             {
                 FormCopyData sm = new FormCopyData();
                 sm.Show(dockPanel);
             }
             else
             {
-                Form f = FindDocument("数据库连接") as Form;
+                Form f = FindDocument("数据复制") as Form;
                 f.Focus();
             }
         }
@@ -462,11 +462,6 @@ namespace CodeFacility.CodeMaker
         {
             FormOption f = new FormOption();
             f.ShowDialog();
-        }
-        #endregion
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
         }
 
         private void DataTransferToolStripMenuItem_Click(object sender, EventArgs e)
@@ -483,15 +478,24 @@ namespace CodeFacility.CodeMaker
             }
         }
 
+        private void TableStructureExportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FindDocument("表结构导出") == null)
+            {
+                FormTableStructure sm = new FormTableStructure();
+                sm.Show(dockPanel);
+            }
+            else
+            {
+                Form f = FindDocument("表结构导出") as Form;
+                f.Focus();
+            }
+        }
+        #endregion
 
-
-
-
-
-
-
-
-
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+        }
 
     }
 }
